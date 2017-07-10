@@ -33,7 +33,7 @@ class PasswordTest extends PHPUnit_Framework_TestCase
 
     public function testHash()
     {
-        $app = $this->app;
+        $app  = $this->app;
         $hash = $app['password']->hash('foo');
         $this->assertEquals($hash, crypt('foo', $hash));
     }
