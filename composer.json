@@ -10,9 +10,7 @@
     ],
     "require": {
         "silex/silex" : "~2.0",
-        "groovey/support" : "dev-master",
-        "ircmaxell/random-lib" : "~1.0"
-
+        "groovey/support" : "dev-master"
     },
     "autoload": {
         "psr-4": {

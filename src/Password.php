@@ -4,9 +4,7 @@ namespace Groovey\Security;
 
 use Pimple\Container;
 
-// More functions:
-// http://php.net/manual/en/refs.crypto.php
-class Security
+class Password
 {
     private $app;
 
@@ -15,7 +13,7 @@ class Security
         $this->app = $app;
     }
 
-    public function password($password)
+    public function hash($password)
     {
         $options = ['cost' => 12];
 
