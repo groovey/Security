@@ -25,5 +25,8 @@ class Cryptography
         return openssl_decrypt($data, 'AES-128-ECB', $key);
     }
 
-
+    public function hash($data)
+    {
+        return hash('ripemd160', $data);
+    }
 }

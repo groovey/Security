@@ -34,4 +34,11 @@ class CryptographyTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('Hello World', $data);
     }
+
+    public function testHash()
+    {
+        $app  = $this->app;
+        $data = $app['cryptography']->hash('Hello World');
+        $this->assertEquals('a830d7beb04eb7549ce990fb7dc962e499a27230', $data);
+    }
 }
