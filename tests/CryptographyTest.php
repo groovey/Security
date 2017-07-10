@@ -1,7 +1,6 @@
 <?php
 
 use Silex\Application;
-use Groovey\Support\Providers\TraceServiceProvider;
 use Groovey\Security\Providers\SecurityServiceProvider;
 
 class CryptographyTest extends PHPUnit_Framework_TestCase
@@ -13,7 +12,6 @@ class CryptographyTest extends PHPUnit_Framework_TestCase
         $app = new Application();
         $app['debug'] = true;
 
-        $app->register(new TraceServiceProvider());
         $app->register(new SecurityServiceProvider());
 
         $this->app = $app;
@@ -23,7 +21,6 @@ class CryptographyTest extends PHPUnit_Framework_TestCase
     {
         $app  = $this->app;
         $data = $app['cryptography']->encrypt('Hello World', 'pass123');
-
         $this->assertEquals('RSjm/vkBNHlDLeTQ4Qtc2g==', $data);
     }
 
@@ -31,7 +28,6 @@ class CryptographyTest extends PHPUnit_Framework_TestCase
     {
         $app  = $this->app;
         $data = $app['cryptography']->decrypt('RSjm/vkBNHlDLeTQ4Qtc2g==', 'pass123');
-
         $this->assertEquals('Hello World', $data);
     }
 

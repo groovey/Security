@@ -65,7 +65,7 @@ class PasswordTest extends PHPUnit_Framework_TestCase
 
     public function testPasswordInfo()
     {
-        $hash  = '$2y$12$sK3RXkTw0Z8x.dxidhYXm.2CgemmawCs0xfO7Lk8HTQWSj4SkVST2';
+        $hash = '$2y$12$sK3RXkTw0Z8x.dxidhYXm.2CgemmawCs0xfO7Lk8HTQWSj4SkVST2';
         $info = password_get_info($hash);
 
         $this->assertArrayHasKey('algo', $info);

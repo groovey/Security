@@ -4,8 +4,6 @@ namespace Groovey\Security;
 
 use Pimple\Container;
 
-// More functions:
-// http://php.net/manual/en/refs.crypto.php
 class Cryptography
 {
     private $app;

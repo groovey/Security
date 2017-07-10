@@ -1,10 +1,10 @@
 # JWT
 
-Groovey Json Web Token
+Groovey Security Package
 
 ## Installation
 
-    $ composer require groovey/jwt
+    $ composer require groovey/security
 
 ## Usage
 
@@ -19,18 +19,11 @@ use Groovey\JWT\Providers\JWTServiceProvider;
 $app = new Application();
 $app['debug'] = true;
 
-$app->register(new JWTServiceProvider(), [
-                'jwt.issuer'   => 'localhost',
-                'jwt.audience' => 'localhost',
-                'jwt.key'      => 'testkey',
-            ]);
+$app->register(new SecurityServiceProvider());
 
-$payload = [
-    'email'    => 'test1@gmail.com',
-    'password' => 'test1',
-];
-
-$token   = $app['jwt']->encode($payload);
-$payload = $app['jwt']->decode($token);
+$hash    = $app['password']->hash('foo');
+$status  = $app['password']->verify('foo', $hash);
+$data    = $app['cryptography']->encrypt('Hello World', 'pass123');
+$message = $app['cryptography']->decrypt($data, 'pass123');
 
 ```
