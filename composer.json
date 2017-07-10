@@ -1,0 +1,22 @@
+{
+    "name": "groovey/security",
+    "description": "Groovey Security.",
+    "keywords": ["silex", "groovey"],
+    "authors": [
+        {
+            "name": "Harold Kim Cantil",
+            "email": "pokoot@gmail.com"
+        }
+    ],
+    "require": {
+        "silex/silex" : "~2.0",
+        "groovey/support" : "dev-master",
+        "ircmaxell/random-lib" : "~1.0"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Groovey\\Security\\": "src"
+        }
+    }
+}
